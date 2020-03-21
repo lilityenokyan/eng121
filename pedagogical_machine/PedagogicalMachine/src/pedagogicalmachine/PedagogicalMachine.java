@@ -62,14 +62,11 @@ public class PedagogicalMachine {
         double a2 = 0;
         double a3v = 0;
         double a1Nom = 0;
-//        System.out.println(M33);
         double a1Denom = -2*M23 - M33*(1-n1*n3) + M23*(n1+n3) - M1*(M2+M3);
-//        System.out.println(a1Denom);
         for (int i=1; i<n; i++) {
             
             //calculate accelarations
             a1Nom = M23*g*(1-n1*n2) + g*(n1*M33-n2*M22) - (M2+M3)*(forces[i]-n1*g*M);
-//            System.out.println(a1Nom);
             a1 = a1Nom / a1Denom;
             a2 = a1*M3*(1-n3) - n2*M2*g - M3*g;
             a3v = a1 - a2;
